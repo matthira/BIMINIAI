@@ -1,0 +1,79 @@
+:root{
+  --gap: 22px;
+  --dark: #000000;
+  --light: #e9e9e9;
+  --white: #ffffff;
+}
+
+/* Reset */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:#ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Page container */
+.page{
+  width: min(980px, 92vw);
+  margin: 22px auto 60px;
+}
+
+/* Tiles */
+.tile{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  overflow:hidden;
+  position:relative;
+  transition: transform 0.15s ease;
+}
+
+.tile:hover{
+  transform: translateY(-1px);
+}
+
+/* Backgrounds */
+.tile--dark{ background: var(--dark); }
+.tile--light{ background: var(--light); }
+.tile--white{ background: var(--white); }
+
+/* Banner */
+.tile--banner{
+  height:170px;
+  margin-bottom: var(--gap);
+}
+
+.banner-logo{
+  width:92%;
+  height:auto;
+  object-fit:contain;
+}
+
+/* Grid layout */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.grid .tile{
+  height:240px;
+}
+
+/* Images inside tiles */
+.tile-img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+}
+
+/* Mobile */
+@media (max-width: 760px){
+  .grid{ grid-template-columns: 1fr; }
+  .grid .tile{ height:220px; }
+  .tile--banner{ height:150px; }
+}
