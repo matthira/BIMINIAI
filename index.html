@@ -2,102 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bimini AI</title>
+
+  <meta name="description" content="Bimini AI – Practical Solutions. Better Outcomes." />
+
+  <!-- Favicon (optional, keep if you added these files) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <link rel="stylesheet" href="./style.css" />
-  <!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
-
   <main class="page">
 
-    <!-- TOP BANNER -->
-    <section class="tile tile--banner">
-      <img
-        class="banner-logo"
-        src="./assets/bimini ai logo_1@300x.png"
-        alt="Bimini AI – Practical Solutions. Better Outcomes."
-      />
-    </section>
+    <!-- =====================
+         TOP BANNER
+    ====================== -->
+    <header class="banner">
+      <img class="banner-mark" src="./assets/bimini ai logo_1@300x.png" alt="Bimini AI" />
+      <div class="banner-tagline">Practical Solutions. Better Outcomes.</div>
+    </header>
 
-    <!-- GRID -->
+    <!-- =====================
+         GRID
+    ====================== -->
     <section class="grid">
 
-      <!-- MEDly one -->
-      <a
-        class="tile tile--dark"
-        href="https://medly.one"
-        target="_blank"
-        rel="noopener"
-        aria-label="MEDly One"
-      >
-        <img class="tile-img" src="./assets/medlyoneweb.svg" alt="MEDly One" />
+      <!-- MEDly One -->
+      <a class="tile tile--dark" href="https://medly.one" target="_blank" rel="noopener" aria-label="MEDly One">
+        <img class="tile-logo tile-logo--medly" src="./assets/medlyoneweb.svg" alt="MEDly One" />
+        <div class="tile-subtitle tile-subtitle--medly">AI Refractive Coach</div>
+        <ol class="tile-list">
+          <li>Patient-Facing AI Client</li>
+          <li>Scheduling and Sales Coach</li>
+          <li>Call Center Assistant</li>
+        </ol>
       </a>
 
       <!-- VAULT³ -->
-      <a
-        class="tile tile--light"
-        href="https://iclvault.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="ICL Vault"
-      >
-        <img class="tile-img" src="./assets/vault3.svg" alt="VAULT3" />
+      <a class="tile tile--light" href="https://iclvault.com" target="_blank" rel="noopener" aria-label="ICL Vault">
+        <img class="tile-logo tile-logo--vault" src="./assets/vault3.svg" alt="VAULT3" />
+        <div class="tile-caption">Pentacam-Based, AI-Driven ICL Sizing Nomogram</div>
       </a>
 
       <!-- IOL Reference -->
-      <a
-        class="tile tile--white"
-        href="https://iolreference.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="IOL Reference"
-      >
-        <img class="tile-img" src="./assets/iolreference web.svg" alt="IOL Reference" />
+      <a class="tile tile--white" href="https://iolreference.com" target="_blank" rel="noopener" aria-label="IOL Reference">
+        <div class="iol-header">
+          <img class="iol-icon" src="./assets/iolreference web.svg" alt="" aria-hidden="true" />
+          <div class="iol-title">IOL Reference</div>
+        </div>
+
+        <ol class="tile-list tile-list--iol">
+          <li>FDA Approved IOL Database</li>
+          <li>RSB LASIK/SMILE Calculator</li>
+          <li>Piggyback Calculator</li>
+          <li>Sulcus Lens Calculator</li>
+        </ol>
+
+        <!-- Optional: App Store badge (image) -->
+        <img class="appstore-badge" src="./assets/appstore-badge.png" alt="Download on the App Store" />
       </a>
 
       <!-- EZReviews -->
-      <a
-        class="tile tile--dark"
-        href="https://ezreviews.app"
-        target="_blank"
-        rel="noopener"
-        aria-label="EZReviews"
-      >
-        <img class="tile-img" src="./assets/ez reviews.svg" alt="EZReviews" />
+      <a class="tile tile--dark" href="https://ezreviews.app" target="_blank" rel="noopener" aria-label="EZReviews">
+        <img class="tile-logo tile-logo--ez" src="./assets/ez reviews.svg" alt="EZReviews" />
+        <div class="tile-caption tile-caption--dark">Obtain google reviews through custom messages.</div>
       </a>
 
       <!-- Refractive Foundations -->
-      <a
-        class="tile tile--dark"
-        href="https://refractivefoundations.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="Refractive Foundations"
-      >
-        <img
-          class="tile-img"
-          src="./assets/rf.svg"
-          alt="Refractive Foundations"
-        />
+      <a class="tile tile--dark" href="https://refractivefoundations.com" target="_blank" rel="noopener" aria-label="Refractive Foundations">
+        <img class="tile-logo tile-logo--rf" src="./assets/rf.svg" alt="Refractive Foundations" />
+        <div class="tile-caption tile-caption--dark">Refractive Surgery Education Reimagined</div>
       </a>
 
       <!-- Contact Us -->
-      <a
-        class="tile tile--light"
-        href="mailto:hello@bimini.ai"
-        aria-label="Contact Bimini AI"
-      >
-        <img class="tile-img" src="./assets/Home-Page-Graphics.svg" alt="Contact Us" />
+      <a class="tile tile--light" href="mailto:hello@bimini.ai" aria-label="Contact Bimini AI">
+        <img class="tile-logo tile-logo--contact" src="./assets/Home-Page-Graphics.svg" alt="" aria-hidden="true" />
+        <div class="contact-title">CONTACT US</div>
       </a>
 
     </section>
-
   </main>
-
 </body>
 </html>
