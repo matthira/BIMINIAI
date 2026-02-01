@@ -77,7 +77,7 @@ a, a:visited, a:hover, a:active{
 }
 .tile:hover{ transform: translateY(-1px); }
 
-.tile--dark{ background: var(--dark); }
+.tile--dark{ background: var(--dark); color: #fff; }
 .tile--light{ background: var(--light); }
 .tile--white{ background: var(--white); }
 
@@ -91,6 +91,11 @@ a, a:visited, a:hover, a:active{
   min-height: 0;              /* important for flex overflow */
 }
 
+/* IOL logo slightly left like your screenshot */
+.tile-media--iol{
+  justify-content:flex-start;
+}
+
 .tile-img{
   max-width: 96%;
   max-height: 100%;
@@ -102,7 +107,6 @@ a, a:visited, a:hover, a:active{
 .tile-body{
   flex: 0 0 auto;
   padding-top: 10px;
-  text-align:center;
 }
 
 /* Captions */
@@ -110,46 +114,30 @@ a, a:visited, a:hover, a:active{
   font-size: 12px;
   line-height: 1.25;
   color: #333;
+  text-align: center;
 }
 .tile-caption--dark{
   color: var(--text-muted-dark);
 }
 
-/* MEDly subtitle + list */
+/* Subtitle */
 .tile-subtitle{
   font-size: 12px;
   line-height: 1.2;
   color: var(--text-muted-dark);
   margin-bottom: 6px;
+  text-align: center;
 }
 
-.tile-list{
-  margin: 0;
-  padding-left: 18px;
-  text-align:left;
-  font-size: 11px;
-  line-height: 1.35;
-  color: var(--text-muted-dark);
-}
-.tile-list li{ margin: 2px 0; }
-
+/* Light list color (IOL tile) */
 .tile-list--light{
   color: var(--text-muted-light);
 }
 
-/* IOL tile tweaks so list + badge fit cleanly */
-.tile-media--iol{
-  justify-content:flex-start;
-}
-.tile-body--iol{
-  text-align:left;
-}
-
+/* App Store badge default sizing */
 .appstore-badge{
-  margin-top: 10px;
   width: 170px;
   height: auto;
-  display:block;
 }
 
 /* Contact title */
@@ -157,6 +145,7 @@ a, a:visited, a:hover, a:active{
   font-size: 20px;
   letter-spacing: 1px;
   color: #111;
+  text-align: center;
 }
 
 /* Make the rings not dominate */
@@ -164,7 +153,50 @@ a, a:visited, a:hover, a:active{
   max-width: 85%;
 }
 
-/* Responsive */
+/* =========================
+   Center lists + app badge
+   (MEDly One + IOL Reference)
+========================= */
+
+/* Center tile body content (MEDly + IOL) */
+.tile-body,
+.tile-body--iol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Center all lists */
+.tile-list{
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 8px 0 12px;
+  text-align: center;
+
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted-dark);
+}
+
+/* Center list items */
+.tile-list li{
+  text-align: center;
+  margin: 2px 0;
+}
+
+/* Slightly smaller bullets */
+.tile-list li::marker{
+  font-size: 0.85em;
+}
+
+/* Center App Store badge */
+.appstore-badge{
+  margin: 10px auto 0;
+  display: block;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 760px){
   .banner{
     flex-direction: column;
@@ -182,47 +214,4 @@ a, a:visited, a:hover, a:active{
   .tile{
     height: 220px;
   }
-}
-
-/* =========================
-   Center lists + app badge
-   (MEDly One + IOL Reference)
-========================= */
-
-/* Center MEDly One content */
-.tile--dark .tile-body{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Center all lists inside tiles */
-.tile-list{
-  list-style-position: inside;
-  padding-left: 0;
-  margin: 8px 0 12px;
-  text-align: center;
-}
-
-.tile-list li{
-  text-align: center;
-}
-
-/* Center IOL tile body specifically */
-.tile-body--iol{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Center App Store badge */
-.appstore-badge{
-  margin: 10px auto 0;
-  display: block;
-}
-
-.tile-list li::marker{
-  font-size: 0.85em;
 }
