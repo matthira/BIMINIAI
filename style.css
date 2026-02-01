@@ -183,3 +183,42 @@ a, a:visited, a:hover, a:active{
     height: 220px;
   }
 }
+
+/* =========================
+   Center lists + app badge
+   (MEDly One + IOL Reference)
+========================= */
+
+/* Center MEDly One content */
+.tile--dark .tile-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Center all lists inside tiles */
+.tile-list{
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 8px 0 12px;
+  text-align: center;
+}
+
+.tile-list li{
+  text-align: center;
+}
+
+/* Center IOL tile body specifically */
+.tile-body--iol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Center App Store badge */
+.appstore-badge{
+  margin: 10px auto 0;
+  display: block;
+}
