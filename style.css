@@ -45,7 +45,7 @@ a, a:visited, a:hover, a:active{
 }
 
 .banner-mark{
-  height: 86px;          /* KEY: controls logo size */
+  height: 86px;          /* controls logo size */
   max-width: 70%;
   width: auto;
   object-fit: contain;
@@ -65,35 +65,34 @@ a, a:visited, a:hover, a:active{
   gap: var(--gap);
 }
 
-/* Tile base */
+/* ===== Tiles ===== */
 .tile{
   display:flex;
   flex-direction:column;
   height: 240px;              /* stable tile height */
   padding: 16px 18px;
   overflow:hidden;
-
   transition: transform .15s ease;
 }
 .tile:hover{ transform: translateY(-1px); }
 
-.tile--dark{ background: var(--dark); color: #fff; }
+.tile--dark{ background: var(--dark); color:#fff; }
 .tile--light{ background: var(--light); }
 .tile--white{ background: var(--white); }
 
 /* Media area (logo/image) */
 .tile-media{
-  flex: 1 1 auto;             /* takes available space */
+  flex: 1 1 auto;
   display:flex;
   align-items:center;
   justify-content:center;
   width:100%;
-  min-height: 0;              /* important for flex overflow */
+  min-height: 0;
 }
 
-/* IOL logo slightly left like your screenshot */
+/* If you want the IOL logo centered too, change flex-start -> center */
 .tile-media--iol{
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 .tile-img{
@@ -103,7 +102,7 @@ a, a:visited, a:hover, a:active{
   display:block;
 }
 
-/* Content area (captions/lists) */
+/* Content area */
 .tile-body{
   flex: 0 0 auto;
   padding-top: 10px;
@@ -129,17 +128,6 @@ a, a:visited, a:hover, a:active{
   text-align: center;
 }
 
-/* Light list color (IOL tile) */
-.tile-list--light{
-  color: var(--text-muted-light);
-}
-
-/* App Store badge default sizing */
-.appstore-badge{
-  width: 170px;
-  height: auto;
-}
-
 /* Contact title */
 .contact-title{
   font-size: 20px;
@@ -154,24 +142,31 @@ a, a:visited, a:hover, a:active{
 }
 
 /* =========================
-   Center lists + app badge
-   (MEDly One + IOL Reference)
+   CENTERING RULES (FINAL)
+   MEDly list + IOL list + App Store badge
 ========================= */
 
-/* Center tile body content (MEDly + IOL) */
-.tile-body,
-.tile-body--iol{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+/* MEDly: center subtitle + list */
+.tile.tile--dark .tile-body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
 }
 
-/* Center all lists */
-.tile-list{
+/* IOL: center list + badge */
+.tile.tile--white .tile-body.tile-body--iol{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+/* Default list styling (MEDly) */
+.tile.tile--dark .tile-body .tile-list{
   list-style-position: inside;
   padding-left: 0;
-  margin: 8px 0 12px;
+  margin: 8px 0 0;
   text-align: center;
 
   font-size: 11px;
@@ -179,21 +174,35 @@ a, a:visited, a:hover, a:active{
   color: var(--text-muted-dark);
 }
 
-/* Center list items */
-.tile-list li{
-  text-align: center;
+.tile.tile--dark .tile-body .tile-list li{
+  text-align:center;
   margin: 2px 0;
 }
 
-/* Slightly smaller bullets */
+/* IOL list: centered as a block, but numbers align cleanly */
+.tile.tile--white .tile-body.tile-body--iol .tile-list{
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 6px 0 12px;
+
+  display: inline-block;  /* shrink-wrap the list */
+  text-align: left;       /* keeps numbering aligned */
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted-light);
+}
+
 .tile-list li::marker{
   font-size: 0.85em;
 }
 
-/* Center App Store badge */
+/* App Store badge centered */
 .appstore-badge{
-  margin: 10px auto 0;
-  display: block;
+  width: 170px;
+  height: auto;
+  display:block;
+  margin: 0;
+  align-self: center;  /* works because parent is flex */
 }
 
 /* ===== Responsive ===== */
@@ -215,60 +224,3 @@ a, a:visited, a:hover, a:active{
     height: 220px;
   }
 }
-
-/* =========================
-   HARD OVERRIDES:
-   Center IOL + MEDly lists + App Store badge
-   (put this at the VERY bottom of style.css)
-========================= */
-
-/* 1) Center MEDly list + subtitle */
-.tile.tile--dark .tile-body{
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-.tile.tile--dark .tile-body .tile-list{
-  list-style-position: inside !important;
-  padding-left: 0 !important;
-  margin: 8px 0 0 !important;
-  text-align: center !important;
-}
-
-.tile.tile--dark .tile-body .tile-list li{
-  text-align: center !important;
-}
-
-/* 2) Center IOL Reference list + App Store badge */
-.tile.tile--white .tile-body.tile-body--iol{
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-/* Center the ordered list as a block */
-.tile.tile--white .tile-body.tile-body--iol .tile-list{
-  list-style-position: inside !important;
-  padding-left: 0 !important;
-  margin: 6px 0 10px !important;
-
-  /* This is the key: center as a unit */
-  display: inline-block !important;
-  text-align: left !important;  /* keeps numbers & text lined up cleanly */
-}
-
-/* Center the list block itself */
-.tile.tile--white .tile-body.tile-body--iol{
-  justify-content: flex-start !important;
-}
-
-/* App Store badge dead-center */
-.tile.tile--white .tile-body.tile-body--iol .appstore-badge{
-  display: block !important;
-  margin: 0 !important;
-  align-self: center !important;
-}
-
